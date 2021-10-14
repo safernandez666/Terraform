@@ -1,37 +1,54 @@
-# Resource: aws_vpc
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
+#
+# VPC Resources
+#  * VPC
+#  * Subnets
+#  * Internet Gateway
+#  * Route Table
+#
 
-resource "aws_vpc" "main" {
-  # The CIDR block for the VPC.
-  cidr_block = "192.168.0.0/16"
+resource "aws_vpc" "demo" {
+  cidr_block = "10.0.0.0/16"
 
-  # Makes your instances shared on the host.
-  instance_tenancy = "default"
+  tags = tomap({
+    "Name"                                      = "terraform-eks-demo-node",
+    "kubernetes.io/cluster/${var.cluster-name}" = "shared",
+  })
+}
 
-  # Required for EKS. Enable/disable DNS support in the VPC.
-  enable_dns_support = true
+resource "aws_subnet" "demo" {
+  count = 2
 
-  # Required for EKS. Enable/disable DNS hostnames in the VPC.
-  enable_dns_hostnames = true
+  availability_zone       = data.aws_availability_zones.available.names[count.index]
+  cidr_block              = "10.0.${count.index}.0/24"
+  map_public_ip_on_launch = true
+  vpc_id                  = aws_vpc.demo.id
 
-  # Enable/disable ClassicLink for the VPC.
-  enable_classiclink = false
+  tags = tomap({
+    "Name"                                      = "terraform-eks-demo-node",
+    "kubernetes.io/cluster/${var.cluster-name}" = "shared",
+  })
+}
 
-  # Enable/disable ClassicLink DNS Support for the VPC.
-  enable_classiclink_dns_support = false
+resource "aws_internet_gateway" "demo" {
+  vpc_id = aws_vpc.demo.id
 
-  # Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC.
-  assign_generated_ipv6_cidr_block = false
-
-  # A map of tags to assign to the resource.
   tags = {
-    Name = "main"
+    Name = "terraform-eks-demo"
   }
 }
 
-output "vpc_id" {
-  value       = aws_vpc.main.id
-  description = "VPC id."
-  # Setting an output value as sensitive prevents Terraform from showing its value in plan and apply.
-  sensitive = false
+resource "aws_route_table" "demo" {
+  vpc_id = aws_vpc.demo.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.demo.id
+  }
+}
+
+resource "aws_route_table_association" "demo" {
+  count = 2
+
+  subnet_id      = aws_subnet.demo.*.id[count.index]
+  route_table_id = aws_route_table.demo.id
 }
