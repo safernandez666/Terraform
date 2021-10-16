@@ -25,7 +25,7 @@ cd vpc
 
 ### Configure 
 
-You must change the variables on **install.sh** with this variables and upload your **public_key** on **ec2.tf**
+You must change the variables on **install.sh** and upload your **public_key** on **ec2.tf**
 
 ```
 API_EMAIL="XXXX"
@@ -34,6 +34,9 @@ RECORD_NAME="netflix.XXXX.XXX.XX"
 ZONE_ID="XXXX"
 RECORD_ID="XXXX"
 ```
+<p align="center">
+<img src="screenshots/vars.png" width="1000" >
+</p>
 
 ### Prepare de VPC with the GoPhish Server
 
