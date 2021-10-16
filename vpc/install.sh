@@ -38,6 +38,7 @@ sudo cp /etc/letsencrypt/live/${RECORD_NAME}/fullchain.pem /opt/gophish/
 echo "Change Config Files..."
 sudo sed -i 's/127.0.0.1/0.0.0.0/g' /opt/gophish/config.json
 sudo sed -i 's/80/443/g' /opt/gophish/config.json
+sudo sed -i 's/false/true/g' /opt/gophish/config.json
 sudo sed -i 's/gophish_admin.key/privkey.pem/g' /opt/gophish/config.json
 sudo sed -i 's/example.key/privkey.pem/g' /opt/gophish/config.json
 sudo sed -i 's/gophish_admin.crt/fullchain.pem/g' /opt/gophish/config.json
