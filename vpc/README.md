@@ -13,9 +13,7 @@ It will be necessary to have:
 
 #### Create the Host A 
 
-[Follow this Tutorial](https://www.tech-otaku.com/web-development/using-cloudflare-api-manage-dns-records/#413)
-
-You must save ZONE ID & ID to use in next steps.
+[Follow this Tutorial](https://www.tech-otaku.com/web-development/using-cloudflare-api-manage-dns-records/#413). You must save ZONE ID & ID to use in next steps.
 
 
 ### Clone the proyect
@@ -27,7 +25,7 @@ cd vpc
 
 ### Configure 
 
-You must change the variables on **install.sh** with this variables
+You must change the variables on **install.sh** with this variables and upload your **public_key** on **ec2.tf**
 
 ```
 API_EMAIL="XXXX"
