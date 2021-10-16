@@ -79,4 +79,12 @@ Now you have the GoPhish Platform ready to use. In this tutorial I use netflix.i
 
 Time to test your users!
 
+<p align="center">
+<img src="screenshots/campain_1.png" width="1000" >
+</p>
+
+<p align="center">
+<img src="screenshots/campain_2.png" width="1000" >
+</p>
+
 This tutorial is for practical purposes. One way to measure our awareness plan.
