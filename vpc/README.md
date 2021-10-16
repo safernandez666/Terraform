@@ -10,18 +10,21 @@ It will be necessary to have:
 
 :three: Your own Domain in Cloudflare
 
+
 #### Create the Host A 
 
 [Follow this Tutorial](https://www.tech-otaku.com/web-development/using-cloudflare-api-manage-dns-records/#413)
 
 You must save ZONE ID & ID to use in next steps.
 
+
 ### Clone the proyect
+
 ````
 git clone https://github.com/safernandez666/Terraform.git && cd Terraform
 cd vpc
-
 ````
+
 ### Configure 
 
 You must change the variables on **install.sh** with this variables
@@ -35,6 +38,7 @@ RECORD_ID="XXXX"
 ```
 
 ### Prepare de VPC with the GoPhish Server
+
 ```
 terraform init
 terraform plan
