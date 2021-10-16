@@ -46,3 +46,11 @@ Check the Output. You will have the address to connect by ssh to the instance. T
 <p align="center">
 <img src="screenshots/output.png" width="800" >
 </p>
+
+Search the default password 
+
+```
+grep -n "Please login with the username admin and the password" /var/log/syslog
+```
+
+Ready to login on ***https://YOURDOMAIN:3333**
