@@ -1,6 +1,6 @@
 ## Terraform VPC & EC2 
 
-To create the infrastructure in AWS and run GoPhish as a Service it will be necessary to have:
+To create the infrastructure in AWS to run GoPhish as a Service. It will be necessary to have:
 
 [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) installed
 
@@ -20,7 +20,7 @@ git clone https://github.com/safernandez666/Terraform.git && cd Terraform
 cd vpc
 
 ````
-### Configure 📌
+### Configure 
 
 You must change the variables on **install.sh** 
 
@@ -37,7 +37,7 @@ RECORD_ID="XXXX"
 ````
 terraform init
 terraform plan
-terraform apply -auto-approved
+terraform apply 
 
 ````
 
@@ -47,10 +47,10 @@ Check the Output. You will have the address to connect by ssh to the instance. T
 <img src="screenshots/output.png" width="800" >
 </p>
 
-Search the default password 
+Search the default password on Syslog
 
 ```
 grep -n "Please login with the username admin and the password" /var/log/syslog
 ```
 
-Ready to login on ***https://YOURDOMAIN:3333**
+Ready to login on *** https://YOURDOMAIN:3333 ***
