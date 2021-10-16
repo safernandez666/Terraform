@@ -16,7 +16,7 @@ internet_ip="$(dig +short myip.opendns.com @resolver1.opendns.com -4)"
 
 curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/bdeb407a4a822dfe7fe812fb128e4aaa/dns_records/f2dddf3d494e0b32f8138f9c01952100" \
 	-H "X-Auth-Email: sfernandez@ironbox.com.ar" \
-	-H "X-Auth-Key: 2b162d02888d1e7e88978f375d2e6870160b8" \
+	-H "X-Auth-Key: xxxx" \
 	-H "Content-Type: application/json" \
 	--data "{\"type\":\"A\",\"name\":\"nexflix.ironbox.com.ar\",\"content\":\"$internet_ip\",\"ttl\":1,\"proxied\":false}" | jq
 
