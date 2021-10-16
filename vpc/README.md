@@ -1,6 +1,6 @@
 ## Terraform VPC & EC2 
 
-To create the a VPN in AWS to run GoPhish as a Service. 
+To create the a VPN in AWS to run GoPhish As a Service. 
 
 It will be necessary to have:
 
@@ -55,4 +55,22 @@ grep -n "Please login with the username admin and the password" /var/log/syslog
 
 Ready to login on **https://YOURDOMAIN:3333**
 
-Now you have the GoPhish platform to use. 
+Now you have the GoPhish platform to use. In this tutorial I use netflix.ironbox.com.ar
+
+# Create the Landing Page. You must clone the original login page.
+
+<p align="center">
+<img src="screenshots/landing.png" width="800" >
+</p>
+
+# Create the Landing Page. You must clone the original login page.
+
+<p align="center">
+<img src="screenshots/sending.png" width="800" >
+</p>
+
+# Importe the email template, will be the raw file.
+
+<p align="center">
+<img src="screenshots/email.png" width="800" >
+</p>
