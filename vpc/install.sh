@@ -7,7 +7,6 @@ RECORD_NAME="netflix.XXXX.XXX.XX"
 ZONE_ID="XXXX"
 RECORD_ID="XXXX"
 
-
 echo "Update & Upgrade | Install Golang & GoPhish..."
 sudo add-apt-repository ppa:certbot/certbot -y
 sudo apt update & sudo upgrade -y

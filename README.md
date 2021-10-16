@@ -3,20 +3,24 @@
 To create the infrastructure in AWS and run GoPhish as a Service it will be necessary to have:
 
 [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) installed
-[AWS programmatic credeials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)
-A domain in Cloudflare managed together with the Management API Key.
 
-# Create the Host A and save the ZONE_ID & ID
+[AWS programmatic credeials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)
+
+Your own Domain in Cloudflare
+
+#### Create the Host A 
 
 [Follow this Tutorial](https://www.tech-otaku.com/web-development/using-cloudflare-api-manage-dns-records/#413)
 
-# Clone the proyect and enter to /VPC
+You must sabe ZONE ID & ID to use in next steps.
+
+### Clone the proyect
 ````
 git clone https://github.com/safernandez666/Terraform.git && cd Terraform
 cd vpc
 
 ````
-# Configure 📌
+### Configure 📌
 
 You must change the variables on **install.sh** 
 
@@ -29,7 +33,7 @@ RECORD_ID="XXXX"
 
 ```
 
-# Prepare de VPC with the server
+### Prepare de VPC with the server
 ````
 terraform init
 terraform plan
