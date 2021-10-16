@@ -1,5 +1,6 @@
 .terraform/
 .terraform*
+terraform.tfstate
 vpc/.terraform*
 vpc/terraform*
 eks/terraform*
