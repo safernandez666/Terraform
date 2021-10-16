@@ -53,4 +53,4 @@ Search the default password on Syslog
 grep -n "Please login with the username admin and the password" /var/log/syslog
 ```
 
-Ready to login on *** https://YOURDOMAIN:3333 ***
+Ready to login on ***https://YOURDOMAIN:3333***
