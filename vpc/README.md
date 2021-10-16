@@ -74,3 +74,5 @@ Now you have the GoPhish platform to use. In this tutorial I use netflix.ironbox
 <p align="center">
 <img src="screenshots/email.png" width="800" >
 </p>
+
+Time to test your users!
