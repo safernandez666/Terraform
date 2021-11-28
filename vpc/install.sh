@@ -18,7 +18,6 @@ sudo mkdir /opt/gophish
 sudo unzip gophish-v0.11.0-linux-64bit.zip -d /opt/gophish
 
 echo "Obtein IP and PUT on Cloudflare..."
-set -e
 INTERNET_IP="$(dig +short myip.opendns.com @resolver1.opendns.com -4)"
 
 curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$RECORD_ID" \
