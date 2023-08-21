@@ -19,8 +19,7 @@ It will be necessary to have:
 ### Clone the proyect
 
 ````
-git clone https://github.com/safernandez666/Terraform.git && cd Terraform
-cd vpc
+git clone https://github.com/safernandez666/Terraform.git
 ````
 
 ### Configure 
@@ -35,7 +34,7 @@ ZONE_ID="XXXX"
 RECORD_ID="XXXX"
 ```
 
-How to Know the Record ID?
+### How to Know the Record ID?
 
 ```
 curl "https://api.cloudflare.com/client/v4/zones/XXXXX/dns_records/" \
@@ -53,7 +52,7 @@ curl "https://api.cloudflare.com/client/v4/zones/XXXXX/dns_records/" \
 terraform init
 terraform plan
 terraform apply 
-````
+```
 
 Check the Output. You will have the address to connect by ssh to the instance. Then it will be necessary to know the default password of GoPhish.
 
