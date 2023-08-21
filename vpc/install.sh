@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Variables
-API_EMAIL="sfernandez@ironbox.com.ar"
-API_KEY="1a51643fc97e20b89ff5e905d7c2937d0a8d0"
-RECORD_NAME="netflix.esprueba.com"
-ZONE_ID="5be44b67064f27617d38ffd23292eef0"
-RECORD_ID="6c77d8feb1adfb505fa8f0765719c2aa"
+API_EMAIL="XXX@XXX"
+API_KEY="XXX"
+RECORD_NAME="netflix.XXX"
+ZONE_ID="XXX"
+RECORD_ID="XXX"
 
 echo "Update & Upgrade | Install Golang & GoPhish..."
 sudo add-apt-repository ppa:certbot/certbot -y
