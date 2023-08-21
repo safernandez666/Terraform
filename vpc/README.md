@@ -34,6 +34,15 @@ RECORD_NAME="netflix.XXXX.XXX.XX"
 ZONE_ID="XXXX"
 RECORD_ID="XXXX"
 ```
+
+How to Know the Record ID?
+
+```
+curl "https://api.cloudflare.com/client/v4/zones/XXXXX/dns_records/" \
+     -H "Authorization: Bearer TOKEN" \
+     -H "Content-Type:application/json" | jq .
+```
+
 <p align="center">
 <img src="screenshots/vars.png" width="1000" >
 </p>

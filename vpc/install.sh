@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Variables
-API_EMAIL="XXXX"
-API_KEY="XXXX"
-RECORD_NAME="netflix.XXXX.XXX.XX"
-ZONE_ID="XXXX"
-RECORD_ID="XXXX"
+API_EMAIL="sfernandez@ironbox.com.ar"
+API_KEY="1a51643fc97e20b89ff5e905d7c2937d0a8d0"
+RECORD_NAME="netflix.esprueba.com"
+ZONE_ID="5be44b67064f27617d38ffd23292eef0"
+RECORD_ID="6c77d8feb1adfb505fa8f0765719c2aa"
 
 echo "Update & Upgrade | Install Golang & GoPhish..."
 sudo add-apt-repository ppa:certbot/certbot -y
@@ -13,9 +13,10 @@ sudo apt update & sudo upgrade -y
 sudo apt install golang-go unzip jq -y
 
 # Install GoPhish
-wget https://github.com/gophish/gophish/releases/download/v0.11.0/gophish-v0.11.0-linux-64bit.zip
+#wget https://github.com/gophish/gophish/releases/download/v0.11.0/gophish-v0.11.0-linux-64bit.zip
+wget https://github.com/gophish/gophish/releases/download/v0.12.1/gophish-v0.12.1-linux-64bit.zip
 sudo mkdir /opt/gophish
-sudo unzip gophish-v0.11.0-linux-64bit.zip -d /opt/gophish
+sudo unzip gophish-v0.12.1-linux-64bit.zip -d /opt/gophish
 
 echo "Obtein IP and PUT on Cloudflare..."
 INTERNET_IP="$(dig +short myip.opendns.com @resolver1.opendns.com -4)"
@@ -27,7 +28,7 @@ curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/
 	--data "{\"type\":\"A\",\"name\":\"$RECORD_NAME\",\"content\":\"$INTERNET_IP\",\"ttl\":1,\"proxied\":false}" | jq .
 
 echo "Install Certbot..."
-sudo apt-get install python-certbot-apache -y
+sudo apt-get install python3-certbot-apache -y
 sudo certbot --apache -d $RECORD_NAME --register-unsafely-without-email --agree-tos -n
 
 echo "Copy the certs files..."
