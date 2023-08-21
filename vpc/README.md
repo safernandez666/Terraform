@@ -27,11 +27,11 @@ git clone https://github.com/safernandez666/Terraform.git
 You must change the variables on **install.sh** and upload your **public_key** on **ec2.tf**
 
 ```
-API_EMAIL="XXXX"
-API_KEY="XXXX"
+API_EMAIL="XXXXX"
+API_KEY="XXXXX"
 RECORD_NAME="netflix.XXXX.XXX.XX"
-ZONE_ID="XXXX"
-RECORD_ID="XXXX"
+ZONE_ID="XXXXX"
+RECORD_ID="XXXXX"
 ```
 
 ### How to Know the Record ID?
