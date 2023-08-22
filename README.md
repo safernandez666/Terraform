@@ -6,7 +6,7 @@ It will be necessary to have:
 
 :one: [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) installed
 
-:two: [AWS programmatic credeials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)
+:two: [AWS programmatic credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html)
 
 :three: Your own Domain in Cloudflare
 
